@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+    --clr-light: #f2f1ef;
+    --clr-light-gray: #a6a6a6;
+    --clr-dark-gray: #333333;
+    --clr-dark: #080705;
+
+    --size-xxs: 0.5rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.125rem;
+    --size-xl: 1.25rem;
+    --size-2xl: 1.5rem;
+    --size-3xl: 1.875rem;
+    --size-4xl: 2.25rem;
+    --size-5xl: 3rem;
+    --size-6xl: 3.75rem;
+    --size-7xl: 4.5rem;
+    --size-8xl: 6rem;
+    --size-9xl: 8rem;
+    --size-10xl: 10rem;
+}
+
+* {
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Lexend", sans-serif;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    height: 100vh;
+}
+
+body:not([data-loaded]) .home-list li a {
+    transition: none !important;
+    opacity: 0;
+    color: var(--clr-dark-gray);
+}
+
+body[data-loaded] .home-list li a {
+    transition: color 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
