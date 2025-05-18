@@ -28,6 +28,13 @@
     transition: opacity 0.5s ease;
 }
 
+.not-home {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .container.active {
     opacity: 1;
     position: relative;
@@ -44,69 +51,12 @@ ul {
     height: var(--size-6xl);
 }
 
-.navbar {
-    display: flex;
-    position: sticky;
-    top: 0;
-    background-color: var(--clr-dark);
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.navbar-buttons {
-    margin: auto;
-}
-
-.navbar a {
-    color: var(--color-light);
-    width: var(--size-3xl);
-    height: var(--size-3xl);
-    margin: var(--size-xxs);
-    cursor: pointer;
-}
-
-.navbar-selection {
-    font-weight: 200;
-    font-size: var(--size-sm);
-    margin: auto var(--size-xs);
-    transition: opacity 0.3s ease;
-}
-
-.navbar-separator {
-    width: 1px;
-    background-color: var(--clr-light);
-}
-
 .label, .copyright {
     display: flex;
     justify-content: center;
     margin: var(--size-lg) auto;
     font-size: var(--size-xs);
     font-weight: 100;
-}
-
-.fade-slide-out {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.bubble-in {
-    opacity: 0;
-    transform: scale(0.8);
-    animation: bubbleIn 0.4s ease-out forwards;
-}
-
-@keyframes bubbleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 /* xs */
@@ -128,12 +78,44 @@ ul {
     .container {
         max-width: 768px;
     }
+
+    .navbar a {
+        width: var(--size-2xl);
+        height: var(--size-2xl);
+    }
+
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    .navbar-selection {
+        visibility: visible;
+        pointer-events: auto;
+        font-weight: 100;
+        margin: auto var(--size-xs);
+        font-size: var(--size-lg);
+    }
+
+    .navbar-separator {
+        width: 1px;
+        background-color: var(--clr-light);
+    }
 }
 
 /* lg */
 @media (min-width: 1024px) {
     .container {
         max-width: 1024px;
+    }
+
+    .navbar a {
+        width: var(--size-3xl);
+        height: var(--size-3xl);
+    }
+
+    .navbar-selection {
+        font-weight: 100;
+        font-size: var(--size-lg);
     }
 }
 

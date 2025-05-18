@@ -21,6 +21,8 @@
     --size-8xl: 6rem;
     --size-9xl: 8rem;
     --size-10xl: 10rem;
+
+    --blur: blur(5px);
 }
 
 * {
@@ -39,7 +41,7 @@ body {
     font-family: "Lexend", sans-serif;
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body:not([data-loaded]) .home-list li a {

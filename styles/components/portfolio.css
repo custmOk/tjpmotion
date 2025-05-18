@@ -1,8 +1,14 @@
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--size-6xl);
     padding: var(--size-4xl);
+    transition: filter 0.3s ease;
+}
+
+.portfolio.blur {
+    filter: var(--blur);
+    transition: filter 0.3s ease;
 }
 
 .portfolio iframe {
@@ -54,4 +60,46 @@
     margin-top: var(--size-base);
     margin-left: auto;
     margin-right: auto;
+}
+
+/* xs */
+@media (min-width: 475px) {
+    .portfolio {
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--size-base);
+        padding: var(--size-xs);
+    }
+}
+
+/* xs */
+@media (min-width: 640px) {
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--size-2xl);
+        padding: var(--size-base);
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--size-4xl);
+        padding: var(--size-lg);
+    }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+    
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    
 }
