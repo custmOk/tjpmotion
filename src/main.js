@@ -183,8 +183,8 @@ function animateHomeIn() {
     swipeUp(items);
 }
 
-function animateHomeOut(target, callback) {
-    navbar.style.opacity = target === 'home' ? '0' : '1';
+function animateHomeOut(_, callback) {
+    navbar.style.opacity = '1';
     const items = document.querySelectorAll('.home-list li');
     swipeDown(items);
     setTimeout(callback, items.length * 100 + 500);
@@ -228,11 +228,14 @@ function animateReelOut(target, callback) {
 }
 
 function animateAboutIn() {
+    socials.style.opacity = '1';
 }
 
 function animateAboutOut(target, callback) {
+    const container = sections.about;
+    container.style.opacity = '0';
     navbar.style.opacity = target === 'home' ? '0' : '1';
-    socials.style.opacity = target === 'home' ? '0' : '1';
+    socials.style.opacity = '0';
     setTimeout(callback, 500);
 }
 
