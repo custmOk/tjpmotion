@@ -32,7 +32,7 @@ const rFullscreenVideo = document.querySelector('.fullscreen-video.rl');
 const rFullscreenDesc = document.querySelector('.fullscreen-desc.rl');
 const rFullscreenBack = document.querySelector('.fullscreen-back.rl');
 
-const socials = document.querySelector('socials');
+const socials = document.querySelector('.socials');
 
 let videosReady = false;
 let videos = [];
