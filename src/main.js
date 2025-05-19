@@ -228,7 +228,6 @@ function animateReelOut(target, callback) {
 }
 
 function animateAboutIn() {
-    socials.style.opacity = target === 'home' ? '0' : '1';
 }
 
 function animateAboutOut(target, callback) {
