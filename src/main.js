@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
     document.body.setAttribute('data-loaded', 'true');
 });
 
-fetch(`http://localhost:3000/api`)
+fetch(`/api/videos`)
 .then(res => res.json())
 .then(data => {
     console.log(data);
