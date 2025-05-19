@@ -1,0 +1,32 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.about p {
+    margin: var(--size-2xl);
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+}
+
+.about h2 {
+    margin: var(--size-5xl);
+    font-weight: 300;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+}
+
+.socials a {
+    margin: var(--size-xxs);
+    padding: var(--size-xxs);
+}
+
+.socials svg {
+    width: var(--size-4xl);
+    height: var(--size-4xl);
+}
