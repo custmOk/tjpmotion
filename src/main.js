@@ -32,6 +32,8 @@ const rFullscreenVideo = document.querySelector('.fullscreen-video.rl');
 const rFullscreenDesc = document.querySelector('.fullscreen-desc.rl');
 const rFullscreenBack = document.querySelector('.fullscreen-back.rl');
 
+const socials = document.querySelector('socials');
+
 let videosReady = false;
 let videos = [];
 let imgToVideo = new Map();
@@ -44,8 +46,6 @@ window.addEventListener('load', () => {
 fetch(`/api/videos`)
 .then(res => res.json())
 .then(data => {
-    console.log(data);
-
     if (!data.data || !Array.isArray(data.data)) {
         console.err('Unexpected Vimeo response format', data);
         return;
@@ -179,13 +179,11 @@ function getActiveSectionKey() {
 }
 
 function animateHomeIn() {
-    console.log('home in');
     const items = document.querySelectorAll('.home-list li');
     swipeUp(items);
 }
 
 function animateHomeOut(target, callback) {
-    console.log('home out');
     navbar.style.opacity = target === 'home' ? '0' : '1';
     const items = document.querySelectorAll('.home-list li');
     swipeDown(items);
@@ -194,7 +192,6 @@ function animateHomeOut(target, callback) {
 
 function animatePortfolioIn() {
     if (!videosReady) return;
-    console.log('portfolio in');
     portfolioContainer.classList.add('active');
     const container = sections.portfolio;
     container.innerHTML = '';
@@ -213,20 +210,17 @@ function animatePortfolioIn() {
 }
 
 function animatePortfolioOut(target, callback) {
-    console.log('portfolio out');
     navbar.style.opacity = target === 'home' ? '0' : '1';
     videos.forEach(wrapper => wrapper.style.opacity = '0');
     setTimeout(callback, 500);
 }
 
 function animateReelIn() {
-    console.log('reel in');
     const items = document.querySelectorAll('.reel-list li');
     swipeUp(items);
 }
 
 function animateReelOut(target, callback) {
-    console.log('reel out');
     navbar.style.opacity = target === 'home' ? '0' : '1';
     const items = document.querySelectorAll('.reel-list li');
     swipeDown(items);
@@ -234,12 +228,12 @@ function animateReelOut(target, callback) {
 }
 
 function animateAboutIn() {
-    console.log('about in');
+    socials.style.opacity = target === 'home' ? '0' : '1';
 }
 
 function animateAboutOut(target, callback) {
-    console.log('about out');
     navbar.style.opacity = target === 'home' ? '0' : '1';
+    socials.style.opacity = target === 'home' ? '0' : '1';
     setTimeout(callback, 500);
 }
 
@@ -274,43 +268,40 @@ function parseVideos(videoData) {
     const parsed = [];
 
     videoData.forEach(video => {
-        for (let i = 0; i < 4; i++) {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(video.embed.html, 'text/html');
-            const iframe = doc.querySelector('iframe');
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(video.embed.html, 'text/html');
+        const iframe = doc.querySelector('iframe');
 
-            if (!iframe) continue;
+        if (!iframe) return;
 
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('video-wrapper');
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('video-wrapper');
 
-            const description = document.createElement('p');
-            description.textContent = video.name || 'No Title';
-            description.classList.add('video-title');
+        const description = document.createElement('p');
+        description.textContent = video.name || 'No Title';
+        description.classList.add('video-title');
 
-            const sizes = video.pictures.sizes;
-            const thumbnail = sizes?.[sizes.length - 1]?.link || '';
-            const img = document.createElement('img');
-            img.src = thumbnail;
-            img.alt = video.name || 'Video thumbnail';
-            img.classList.add('video-thumbnail');
+        const sizes = video.pictures.sizes;
+        const thumbnail = sizes?.[sizes.length - 1]?.link || '';
+        const img = document.createElement('img');
+        img.src = thumbnail;
+        img.alt = video.name || 'Video thumbnail';
+        img.classList.add('video-thumbnail');
 
-            let year = '';
-            video.tags.forEach(y => year = y.name);
-            console.log(year);
+        let year = '';
+        video.tags.forEach(y => year = y.name);
 
-            const videoDesc = video.description;
-            if (year.length != 0)
-                yearToVideo.set(year, {iframe, videoDesc});
-            else
-            {
-                imgToVideo.set(img, {iframe, videoDesc});
+        const videoDesc = video.description;
+        if (year.length != 0)
+            yearToVideo.set(year, {iframe, videoDesc});
+        else
+        {
+            imgToVideo.set(img, {iframe, videoDesc});
 
-                wrapper.appendChild(img);
-                wrapper.appendChild(description);
+            wrapper.appendChild(img);
+            wrapper.appendChild(description);
 
-                parsed.push(wrapper);
-            }
+            parsed.push(wrapper);
         }
     });
 
