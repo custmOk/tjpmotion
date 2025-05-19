@@ -3,6 +3,7 @@
     flex-direction: column;
     flex-grow: 1;
     overflow: hidden;
+    transition: opacity 0.5s ease;
 }
 
 .about p {
