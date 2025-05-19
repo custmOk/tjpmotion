@@ -228,6 +228,8 @@ function animateReelOut(target, callback) {
 }
 
 function animateAboutIn() {
+    const container = sections.about;
+    container.style.opacity = '1';
     socials.style.opacity = '1';
 }
 
