@@ -13,6 +13,12 @@
     margin: auto;
     text-align: center;
     font-weight: 200;
+    transition: filter 0.3s ease;
+}
+
+.reel-list.blur {
+    filter: var(--blur);
+    transition: filter 0.3s ease;
 }
 
 .reel-list li {

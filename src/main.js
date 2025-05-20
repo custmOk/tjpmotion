@@ -21,6 +21,7 @@ const navLinks = document.querySelectorAll('.navbar a, .home-list a');
 const navbarSelection = document.querySelector('.navbar-selection');
 const navbar = document.querySelector('.navbar');
 const reelYears = document.querySelectorAll('.year');
+const reelList = document.querySelector('.reel-list');
 
 const pFullscreenVideoContainer = document.querySelector('.fullscreen-video-container.pt');
 const pFullscreenVideo = document.querySelector('.fullscreen-video.pt');
@@ -118,6 +119,7 @@ rFullscreenBack.addEventListener('click', () => {
     copyright.classList.remove('blur');
     navbar.classList.remove('blur');
     sections.reel.classList.remove('blur');
+    reelList.classList.remove('blur');
 
     setTimeout(() => {
         rFullscreenVideoContainer.style.visibility = 'hidden';
@@ -135,6 +137,7 @@ function showFullscreenVideo(dict, fsv, fsvc, fsd, sect) {
     copyright.classList.add('blur');
     navbar.classList.add('blur');
     sect.classList.add('blur');
+    reelList.classList.add('blur');
     document.body.style.overflow = 'hidden';
     fsd.textContent = dict.videoDesc || 'something went wrong';
 }
