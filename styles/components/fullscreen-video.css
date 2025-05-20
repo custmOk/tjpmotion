@@ -12,8 +12,9 @@
 }
 
 .fullscreen-video-container iframe {
+    aspect-ratio: 16 / 9;
     width: 75%;
-    height: 75%;
+    height: auto;
 }
 
 .fullscreen-video-container.active {
@@ -34,7 +35,7 @@
     text-shadow: 2px 2px 2px var(--clr-dark);
     white-space: pre-wrap;
     margin: var(--size-base);
-    max-width: 60%;
+    text-align: center;
     font-weight: 200;
 }
 
@@ -49,3 +50,26 @@
 .fullscreen-back:hover {
     transform: scale(1.2);
 }
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+    .fullscreen-video-container iframe {
+        width: 65%;
+        height: auto;
+    }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */

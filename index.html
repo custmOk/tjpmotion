@@ -14,7 +14,7 @@
     <section class="container home active">
       <ul class="home-list">
         <li><a href="#" class="disabled" data-target="portfolio">portfolio</a></li>
-        <li><a href="#" data-target="reel">reel</a></li>
+        <li><a href="#" class="disabled" data-target="reel">reel</a></li>
         <li><a href="#" data-target="about">about</a></li>
       </ul>
     </section>
@@ -42,21 +42,21 @@
           </svg>
         </a>
         <div class="navbar-separator"></div>
-        <p class="navbar-selection">placeholder</p>
+        <p class="navbar-selection"></p>
       </nav>
 
       <section class="container portfolio-container">
         <section class="portfolio"></section>
 
         <div class="fullscreen-video-container pt">
+          <button class="fullscreen-back pt">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+            </svg>
+          </button>
           <iframe src="" frameborder="0" class="fullscreen-video pt"></iframe>
           <div class="fullscreen-video-info pt">
             <p class="fullscreen-desc pt"></p>
-            <button class="fullscreen-back pt">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-              </svg>
-            </button>
           </div>
         </div>
       </section>
@@ -67,44 +67,53 @@
         </ul>
 
         <div class="fullscreen-video-container rl">
+          <button class="fullscreen-back rl">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+            </svg>
+          </button>
           <iframe src="" frameborder="0" class="fullscreen-video rl"></iframe>
           <div class="fullscreen-video-info rl">
             <p class="fullscreen-desc rl"></p>
-            <button class="fullscreen-back rl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-              </svg>
-            </button>
           </div>
         </div>
       </section>
 
       <section class="container about">
-        <h2>Wsg everybody!</h2>
-        <img src="/LookingDown.jpg" alt="Looking down">
-        <p>My name's Tyler Powell, & I'm an aspiring videographer based outta Sarasota, Florida. I've been on this path ever since the days of editing gaming videos of me and the gang, and somewhere along the way, that little hobby turned into a full-on dream: to someday shoot professional sports content for organizations like the NBA and NFL!</p>
-        <p>Nowadays, you'll catch me putting in work behind the lens to help build up local brands, editing tutorials to give back to the same community that helped me grow, and working with athletes, amateur to pro, all while getting one step closer to that end goal.</p>
-        <img src="/Camera.jpg" alt="Camera">
-        <p>Visually, I like to think I hold my own when it comes to cooking up energizing hype vids, cinematic and deep-feeling recaps, and modern, culturally fluent branding content… but hey, I'll let y'all be the judge of that.</p>
-        <p>If you need a stylized, vibey lil vid, or just someone to talk video with, consider a brother. I might be able to lend a hand.</p>
-        <img src="/Laptop.jpg" alt="Laptop">
+        <div class="grid">
+          <h2 class="greeting">Wsg everybody!</h2>
+          <div class="row">
+            <img src="/LookingDown.jpg" alt="Looking down" class="about-img looking-down">
+            <div class="mid-text1">
+              <p>My name's Tyler Powell, & I'm an aspiring videographer based outta Sarasota, Florida. I've been on this path ever since the days of editing gaming videos of me and the gang, and somewhere along the way, that little hobby turned into a full-on dream: to someday shoot professional sports content for organizations like the NBA and NFL!</p>
+              <p>Nowadays, you'll catch me putting in work behind the lens to help build up local brands, editing tutorials to give back to the same community that helped me grow, and working with athletes, amateur to pro, all while getting one step closer to that end goal.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mid-text2">
+              <p>Visually, I like to think I hold my own when it comes to cooking up energizing hype vids, cinematic and deep-feeling recaps, and modern, culturally fluent branding content… but hey, I'll let y'all be the judge of that.</p>
+              <p>If you need a stylized, vibey lil vid, or just someone to talk video with, consider a brother. I might be able to lend a hand.</p>
+            </div>
+            <img src="/Camera.jpg" alt="Camera" class="about-img camera">
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://www.instagram.com/tjpmotion?igsh=MWV1dWVna2QyaDRhdA%3D%3D&utm_source=qr" class="instagram" target="_blank">
+            <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+              <g transform="matrix(0.45 0 0 0.45 12 12)">
+                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" translate(-25, -25)" d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 C 35.89543050033841 11 35 11.895430500338414 35 13 C 35 14.104569499661586 35.89543050033841 15 37 15 C 38.10456949966159 15 39 14.104569499661586 39 13 C 39 11.895430500338414 38.10456949966159 11 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z" stroke-linecap="round" />
+              </g>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@tjpmotion?si=e3HM-KU7Jl1FjgSi" class="youtube" target="_blank">
+            <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+              <g transform="matrix(0.87 0 0 0.87 12 12)" >
+                <path style="stroke: rgb(255, 255, 255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -11.5)" d="M 23.5 6.939 C 23.50026526689341 6.027012459034786 23.13816555809146 5.1522867813647775 22.493386735426853 4.5073204139582685 C 21.848607912762247 3.862354046551759 20.97398757954388 3.4999999614213357 20.062 3.5 L 3.937 3.5 C 3.0251856960958867 3.5002651779219454 2.1508222779752955 3.8627363366313343 1.5062597368906183 4.507673950477772 C 0.8616971958059412 5.15261156432421 0.4997347449353873 6.027185696118325 0.5000000000000004 6.939 L 0.5 16.06 C 0.49946942762075425 16.97198752599999 0.8613147352960506 17.846818592945205 1.505906029940419 18.49197252182988 C 2.150497324584787 19.137126450714554 3.0250123581966974 19.499734887414377 3.937000000000001 19.5 L 20.062 19.5 C 20.974160919938736 19.500000154344 21.848932902169416 19.13750880766837 22.493740493813064 18.492326109805035 C 23.138548085456716 17.847143411941694 23.50053063462476 16.972160765594747 23.5 16.06 Z M 9.5 15.439 L 9.5 6.779 L 16.269 11.11 Z" stroke-linecap="round" />
+              </g>
+            </svg>
+          </a>
+        </div>
       </section>
-      <div class="socials">
-        <a href="#" class="instagram">
-          <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-            <g transform="matrix(0.45 0 0 0.45 12 12)">
-              <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" translate(-25, -25)" d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 C 35.89543050033841 11 35 11.895430500338414 35 13 C 35 14.104569499661586 35.89543050033841 15 37 15 C 38.10456949966159 15 39 14.104569499661586 39 13 C 39 11.895430500338414 38.10456949966159 11 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z" stroke-linecap="round" />
-            </g>
-          </svg>
-        </a>
-        <a href="#" class="youtube">
-          <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-            <g transform="matrix(0.87 0 0 0.87 12 12)" >
-              <path style="stroke: rgb(255, 255, 255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -11.5)" d="M 23.5 6.939 C 23.50026526689341 6.027012459034786 23.13816555809146 5.1522867813647775 22.493386735426853 4.5073204139582685 C 21.848607912762247 3.862354046551759 20.97398757954388 3.4999999614213357 20.062 3.5 L 3.937 3.5 C 3.0251856960958867 3.5002651779219454 2.1508222779752955 3.8627363366313343 1.5062597368906183 4.507673950477772 C 0.8616971958059412 5.15261156432421 0.4997347449353873 6.027185696118325 0.5000000000000004 6.939 L 0.5 16.06 C 0.49946942762075425 16.97198752599999 0.8613147352960506 17.846818592945205 1.505906029940419 18.49197252182988 C 2.150497324584787 19.137126450714554 3.0250123581966974 19.499734887414377 3.937000000000001 19.5 L 20.062 19.5 C 20.974160919938736 19.500000154344 21.848932902169416 19.13750880766837 22.493740493813064 18.492326109805035 C 23.138548085456716 17.847143411941694 23.50053063462476 16.972160765594747 23.5 16.06 Z M 9.5 15.439 L 9.5 6.779 L 16.269 11.11 Z" stroke-linecap="round" />
-            </g>
-          </svg>
-        </a>
-      </div>
     </section>
 
     <footer>

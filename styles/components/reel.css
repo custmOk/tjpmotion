@@ -43,6 +43,9 @@
     color: var(--clr-dark-gray);
 }
 
+/* xs */
+/* @media (min-width: 475px) {} */
+
 /* sm */
 /* @media (min-width: 640px) {} */
 

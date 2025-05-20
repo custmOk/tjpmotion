@@ -6,21 +6,54 @@
     transition: opacity 0.5s ease;
 }
 
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting {
+    margin: var(--size-2xl);
+    text-align: center;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-img {
+    height: var(--size-10xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: var(--size-2xl);
+    border-radius: var(--size-base);
+    object-fit: cover;
+}
+
 .about p {
     margin: var(--size-2xl);
     font-weight: 200;
     letter-spacing: 0.05rem;
-}
-
-.about h2 {
-    margin: var(--size-5xl);
-    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .socials {
     display: flex;
     justify-content: center;
     transition: opacity 0.5s ease;
+    margin-top: auto;
 }
 
 .socials a {
@@ -31,4 +64,56 @@
 .socials svg {
     width: var(--size-4xl);
     height: var(--size-4xl);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+    .about-img {
+        height: var(--size-8xl);
+        margin: var(--size-lg);
+        border-radius: var(--size-base);
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .about-img {
+        height: var(--size-9xl);
+        margin: var(--size-lg);
+        border-radius: var(--size-base);
+    }
+
+    .greeting {
+        margin: var(--size-3xl);
+        font-weight: 300;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: var(--size-4xl);
+    }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+    .about-img {
+        height: var(--size-9xl);
+        margin: var(--size-2xl);
+        border-radius: var(--size-base);
+    }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    .about-img {
+        height: var(--size-10xl);
+    }
 }

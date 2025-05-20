@@ -1,11 +1,11 @@
 import '../styles/modern-normalize.css'
 import '../styles/style.css'
 import '../styles/components/home.css'
-import '../styles/components/navbar.css'
 import '../styles/components/portfolio.css'
 import '../styles/components/reel.css'
 import '../styles/components/about.css'
 import '../styles/components/fullscreen-video.css'
+import '../styles/components/navbar.css'
 import '../styles/utils.css'
 
 const sections = {
@@ -32,6 +32,8 @@ const rFullscreenVideo = document.querySelector('.fullscreen-video.rl');
 const rFullscreenDesc = document.querySelector('.fullscreen-desc.rl');
 const rFullscreenBack = document.querySelector('.fullscreen-back.rl');
 
+const label = document.querySelector('.label');
+const copyright = document.querySelector('.copyright');
 const socials = document.querySelector('.socials');
 
 let videosReady = false;
@@ -54,8 +56,8 @@ fetch(`/api/videos`)
     videos = parseVideos(data.data);
     videosReady = true;
 
-    const portfolioLink = document.querySelector('.home-list a[href="#"]');
-    if (portfolioLink) portfolioLink.classList.remove('disabled');
+    const links = document.querySelectorAll('.home-list a[href="#"]');
+    links.forEach(link => link.classList.remove('disabled'));
 })
 .catch(err => console.error('Fetch error:', err));
 
@@ -97,6 +99,8 @@ sections.portfolio.addEventListener('click', (e) => {
 
 pFullscreenBack.addEventListener('click', () => {
     pFullscreenVideoContainer.classList.remove('active');
+    label.classList.remove('blur');
+    copyright.classList.remove('blur');
     navbar.classList.remove('blur');
     sections.portfolio.classList.remove('blur');
 
@@ -110,6 +114,8 @@ pFullscreenBack.addEventListener('click', () => {
 
 rFullscreenBack.addEventListener('click', () => {
     rFullscreenVideoContainer.classList.remove('active');
+    label.classList.remove('blur');
+    copyright.classList.remove('blur');
     navbar.classList.remove('blur');
     sections.reel.classList.remove('blur');
 
@@ -125,6 +131,8 @@ function showFullscreenVideo(dict, fsv, fsvc, fsd, sect) {
     fsv.src = dict.iframe.src;
     fsvc.style.visibility = 'visible';
     fsvc.classList.add('active');
+    label.classList.add('blur');
+    copyright.classList.add('blur');
     navbar.classList.add('blur');
     sect.classList.add('blur');
     document.body.style.overflow = 'hidden';
@@ -248,12 +256,14 @@ function swipeUp(items) {
         item.style.opacity = '0';
     });
     requestAnimationFrame(() => {
-        items.forEach((item, i) => {
-            item.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
-            item.style.transitionDelay = `${i * 100}ms`;
-            item.style.transform = 'translateY(0)';
-            item.style.opacity = '1';
-            setTimeout(() => item.style.removeProperty('transform'), i * 100 + 500);
+        requestAnimationFrame(() => {
+            items.forEach((item, i) => {
+                item.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+                item.style.transitionDelay = `${i * 100}ms`;
+                item.style.transform = 'translateY(0)';
+                item.style.opacity = '1';
+                setTimeout(() => item.style.removeProperty('transform'), i * 100 + 500);
+            });
         });
     });
 }
