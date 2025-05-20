@@ -30,7 +30,6 @@
 
 .placeholder {
     visibility: hidden;
-    display: none;
 }
 
 .about-img {
@@ -87,8 +86,6 @@
 @media (min-width: 768px) {
     .about-img {
         width: var(--size-9xl);
-        margin: var(--size-lg);
-        border-radius: var(--size-base);
     }
 
     .greeting {
@@ -114,9 +111,7 @@
 /* xl */
 @media (min-width: 1280px) {
     .about-img {
-        width: var(--size-9xl);
         margin: var(--size-2xl);
-        border-radius: var(--size-base);
     }
 }
 
