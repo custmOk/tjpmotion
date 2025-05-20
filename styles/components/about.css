@@ -28,20 +28,9 @@
     align-items: center;
 }
 
-.img-pair {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--size-xl);
-    margin: var(--size-2xl);
-    flex-wrap: wrap;
-}
-
-.img-pair .about-img {
-  height: var(--size-10xl);
-  object-fit: cover;
-  border-radius: var(--size-base);
+.placeholder {
+    visibility: hidden;
+    display: none;
 }
 
 .about-img {
@@ -115,6 +104,10 @@
         flex-direction: row;
         align-items: center;
         margin: var(--size-4xl);
+    }
+
+    .placeholder {
+        display: inline;
     }
 }
 
