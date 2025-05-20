@@ -34,6 +34,7 @@
 
 .about-img {
     width: var(--size-10xl);
+    height: var(--size-10xl);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,6 +78,7 @@
 @media (min-width: 640px) {
     .about-img {
         width: var(--size-8xl);
+        height: var(--size-8xl);
         margin: var(--size-lg);
         border-radius: var(--size-base);
     }
@@ -86,6 +88,7 @@
 @media (min-width: 768px) {
     .about-img {
         width: var(--size-9xl);
+        height: var(--size-9xl);
     }
 
     .greeting {
@@ -119,5 +122,6 @@
 @media (min-width: 1536px) {
     .about-img {
         width: var(--size-10xl);
+        height: var(--size-10xl);
     }
 }
