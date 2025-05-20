@@ -137,7 +137,8 @@ function showFullscreenVideo(dict, fsv, fsvc, fsd, sect) {
     copyright.classList.add('blur');
     navbar.classList.add('blur');
     sect.classList.add('blur');
-    reelList.classList.add('blur');
+    if (sect === 'reel')
+        reelList.classList.add('blur');
     document.body.style.overflow = 'hidden';
     fsd.textContent = dict.videoDesc || 'something went wrong';
 }
