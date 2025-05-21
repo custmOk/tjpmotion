@@ -1,6 +1,5 @@
 .navbar {
     display: flex;
-    flex-shrink: 0;
     justify-content: center;
     position: sticky;
     top: 0;
