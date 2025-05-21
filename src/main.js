@@ -37,6 +37,15 @@ const label = document.querySelector('.label');
 const copyright = document.querySelector('.copyright');
 const socials = document.querySelector('.socials');
 
+const img1 = document.querySelector('.sitting');
+const img2 = document.querySelector('.laptop');
+const imgContainer = document.querySelector('.img-container');
+const row1 = document.querySelector('.row1');
+const row2 = document.querySelector('.row2');
+
+const x = window.matchMedia('(min-width: 1024px)');
+sideBySide(x);
+
 let videosReady = false;
 let videos = [];
 let imgToVideo = new Map();
@@ -129,6 +138,10 @@ rFullscreenBack.addEventListener('click', () => {
     }, 300);
 });
 
+x.addEventListener('change', () => {
+    sideBySide(x);
+});
+
 function showFullscreenVideo(dict, fsv, fsvc, fsd, sect) {
     fsv.src = dict.iframe.src;
     fsvc.style.visibility = 'visible';
@@ -141,6 +154,21 @@ function showFullscreenVideo(dict, fsv, fsvc, fsd, sect) {
         reelList.classList.add('blur');
     document.body.style.overflow = 'hidden';
     fsd.textContent = dict.videoDesc || 'something went wrong';
+}
+
+sideBySide(x);
+
+function sideBySide(x) {
+    if (x.matches) {
+        console.log('greater than 1024');
+        imgContainer.innerHTML = '';
+        row1.appendChild(img1);
+        row2.prepend(img2);
+    } else {
+        console.log('less than 1024');
+        imgContainer.appendChild(img1);
+        imgContainer.appendChild(img2);
+    }
 }
 
 function navigateTo(targetKey) {

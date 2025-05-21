@@ -28,6 +28,11 @@
     align-items: center;
 }
 
+.img-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .about-img {
     width: var(--size-10xl);
     display: flex;
