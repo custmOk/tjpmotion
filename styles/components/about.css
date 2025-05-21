@@ -13,15 +13,6 @@
     align-items: center;
 }
 
-.greeting {
-    margin: var(--size-2xl);
-    text-align: center;
-    font-weight: 200;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .row {
     display: flex;
     flex-direction: column;
@@ -34,12 +25,12 @@
 }
 
 .about-img {
-    width: var(--size-10xl);
+    width: var(--size-8xl);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: var(--size-2xl);
+    margin: var(--size-xxs);
     border-radius: var(--size-base);
     object-fit: cover;
 }

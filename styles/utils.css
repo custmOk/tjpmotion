@@ -54,10 +54,19 @@ ul {
     height: var(--size-6xl);
 }
 
-.label, .copyright {
+.label {
     display: flex;
     justify-content: center;
     margin: var(--size-lg) auto;
+    font-size: var(--size-xs);
+    font-weight: 100;
+    transition: filter 0.3s ease;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    margin: var(--size-xxs) auto;
     font-size: var(--size-xs);
     font-weight: 100;
     transition: filter 0.3s ease;
