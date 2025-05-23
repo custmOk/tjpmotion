@@ -66,6 +66,8 @@ ul {
     display: flex;
     justify-content: center;
     margin: var(--size-xxs) auto;
+    flex-direction: column;
+    align-items: center;
     font-size: var(--size-xs);
     font-weight: 100;
     transition: filter 0.3s ease;
